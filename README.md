@@ -1,52 +1,72 @@
 # AskMeAnything AI 🤖
 
-An AI-powered chatbot built using **Spring Boot**, **Spring AI**, and **Google Gemini 2.5 Flash**. The application exposes REST APIs that allow users to interact with Google's Gemini model and receive intelligent, real-time responses.
+A modern AI-powered chatbot built using **Spring Boot**, **Spring AI**, **Google Gemini 2.5 Flash**, and a custom **HTML/CSS/JavaScript frontend**. The application enables users to interact with Google's Gemini model through a clean and responsive chat interface.
+
+---
 
 ## 🚀 Features
 
 * AI-powered conversational chatbot
-* Integration with Google Gemini 2.5 Flash
-* Built using Spring AI's ChatClient API
+* Google Gemini 2.5 Flash integration
+* Spring AI ChatClient implementation
 * RESTful API architecture
+* Modern chat-based frontend UI
+* Real-time question and answer flow
 * Environment variable based API key management
-* Cross-Origin support for frontend integration
-* Lightweight and scalable Spring Boot backend
+* CORS enabled for frontend integration
 
 ---
 
 ## 🛠️ Tech Stack
+
+### Backend
 
 * Java 21
 * Spring Boot 4
 * Spring AI 2.0
 * Google Gemini 2.5 Flash
 * Maven
-* REST APIs
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript (ES6)
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-src/
-├── main/
-│   ├── java/
-│   │   └── com/cfs/AksMeAnyThingAi/
-│   │       ├── config/
-│   │       │   └── ChatClientConfig.java
-│   │       ├── controller/
-│   │       │   └── ChatController.java
-│   │       └── AksMeAnyThingAiApplication.java
-│   │
-│   └── resources/
-│       └── application.properties
+AskMeAnythingAI/
 │
-└── pom.xml
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/cfs/AksMeAnyThingAi/
+│   │   │       ├── config/
+│   │   │       │   └── ChatClientConfig.java
+│   │   │       ├── controller/
+│   │   │       │   └── ChatController.java
+│   │   │       └── AksMeAnyThingAiApplication.java
+│   │   │
+│   │   └── resources/
+│   │       └── application.properties
+│
+├── AskMeAiUI/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── pom.xml
+└── README.md
 ```
+
+---
 
 ## ⚙️ Configuration
 
-Set your Gemini API key as an environment variable:
+Set your Gemini API key as an environment variable.
 
 ### Windows
 
@@ -54,13 +74,13 @@ Set your Gemini API key as an environment variable:
 set GEMINI_API_KEY=YOUR_API_KEY
 ```
 
-### Linux / macOS
+### Linux/macOS
 
 ```bash
 export GEMINI_API_KEY=YOUR_API_KEY
 ```
 
-Configure `application.properties`:
+### application.properties
 
 ```properties
 spring.ai.google.genai.api-key=${GEMINI_API_KEY}
@@ -70,22 +90,22 @@ spring.ai.google.genai.chat.options.model=gemini-2.5-flash
 
 ---
 
-## ▶️ Running the Application
+## ▶️ Running the Backend
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/v-sharma12005/AskMeAnythingAI.git
-cd AskMeAnythingAI
+git clone https://github.com/v-sharma12005/AskMeAIChatbot.git
+cd AskMeAIChatbot
 ```
 
-Run the application:
+Run the Spring Boot application:
 
 ```bash
 mvn spring-boot:run
 ```
 
-The application will start on:
+Backend will start on:
 
 ```text
 http://localhost:8080
@@ -93,11 +113,31 @@ http://localhost:8080
 
 ---
 
+## 🌐 Running the Frontend
+
+Open the frontend folder:
+
+```text
+AskMeAiUI/
+```
+
+Run using Live Server in VS Code or open:
+
+```text
+index.html
+```
+
+Frontend will communicate with:
+
+```text
+http://localhost:8080/api/chat
+```
+
+---
+
 ## 📡 API Endpoint
 
-### Chat with AI
-
-**POST**
+### POST
 
 ```http
 http://localhost:8080/api/chat
@@ -121,13 +161,27 @@ http://localhost:8080/api/chat
 
 ---
 
-## 🎯 Future Enhancements
+## 🎯 Key Learnings
 
-* React Frontend Integration
-* Chat History Persistence
+* Spring AI ChatClient
+* Google Gemini API Integration
+* REST API Development
+* Environment Variable Management
+* Frontend-Backend Communication
+* JSON Request/Response Handling
+* Maven Dependency Management
+
+---
+
+## 🔮 Future Enhancements
+
 * User Authentication
-* Streaming AI Responses
+* Chat History Persistence
+* Streaming Responses
+* Dark/Light Theme Toggle
 * Multi-Model Support (Gemini, OpenAI, Ollama)
+* Docker Containerization
+* Kubernetes Deployment
 
 ---
 
@@ -135,12 +189,14 @@ http://localhost:8080/api/chat
 
 **Vishnu Sharma**
 
-* B.Tech CSE
-* AWS & DevOps Enthusiast
-* Cloud | DevOps | AI Integration Projects
+B.Tech Computer Science Engineering
+
+Cloud | DevOps | AI Integration Enthusiast
+
+GitHub: https://github.com/v-sharma12005
 
 ---
 
-## 📜 License
+## ⭐ Support
 
-This project is licensed under the MIT License.
+If you found this project useful, consider giving it a star on GitHub.
